@@ -13,3 +13,9 @@
 
 # Add a feed source
 #sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default
+
+git clone git clone https://github.com/coolsnowwolf/lede
+cp -r ./lede/package/network/ ./package/
+cp -r ./lede/package/lean ./package/
+ln -snf /usr/bin/upx ./staging_dir/host/bin/upx
+echo "src-git helloworld https://github.com/fw876/helloworld" >> ./feeds.conf.default
